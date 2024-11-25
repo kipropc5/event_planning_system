@@ -1,0 +1,43 @@
+{#{% extends 'master.html' %}#}
+{#{% load static %}#}
+{#{% load crispy_forms_tags %}#}
+{#{% load crispy_forms_filters %}#}
+{#{% block content %}#}
+{#    <form action="" class="register-form" method="post">#}
+{#        {% csrf_token %}#}
+{#        <fieldset class="form-group">#}
+{#            <legend class="border-bottom mb-4">Login Here</legend>#}
+{#            {{ form|crispy }}#}
+{#        </fieldset>#}
+{#    <div class="form-group">#}
+{#        <input class="btn btn-info" value="Login" type="submit">#}
+{#    </div>#}
+{##}
+{#    </form>#}
+{#{% endblock %}#}
+
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5" id="delete-participant-container">
+        <h1 class="text-danger text-center mb-4" id="delete-participant-header">Delete Participant</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card" id="delete-participant-card">
+                    <div class="card-body" id="delete-participant-card-body">
+                        <h5 class="card-title" id="delete-participant-title">Are you sure you want to delete this participant?</h5>
+                        <p class="card-text" id="delete-participant-name"><strong>Participant Name:</strong> {{ participant.participant_name }}</p>
+                        <p class="card-text" id="delete-participant-email"><strong>Email:</strong> {{ participant.participant_email }}</p>
+                        <p class="card-text" id="delete-participant-event"><strong>Event:</strong> {{ participant.event_name.event_name }}</p>
+                        <form method="post" action="{% url 'delete-participant' participant.id %}" id="delete-participant-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger" id="delete-participant-btn">Delete</button>
+                            <a href="{% url 'participant-list' %}" class="btn btn-secondary" id="cancel-delete-btn">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

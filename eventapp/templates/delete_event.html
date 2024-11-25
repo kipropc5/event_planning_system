@@ -1,0 +1,46 @@
+{#{% extends 'master.html' %}#}
+{#{% load crispy_forms_filters %}#}
+{#{% load static %}#}
+{#{% load crispy_forms_tags %}#}
+{#{% load crispy_forms_filters %}#}
+{#{% block content %}#}
+{#    <form action="{% url 'user-registration' %}" class="register-form" method="post">#}
+{#        {% csrf_token %}#}
+{#        <fieldset class="form-group">#}
+{#            <legend class="border-bottom mb-4">Join Today</legend>#}
+{#            {{ form|crispy }}#}
+{#        </fieldset>#}
+{#        <div class="form-group">#}
+{#            <input value="Register" class="btn btn-info" type="submit">#}
+{#        </div>#}
+{#    </form>#}
+{#{% endblock %}#}
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5" id="delete-event-container">
+        <h1 class="text-danger text-center mb-4" id="delete-event-header">Delete Event</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card" id="delete-event-card">
+                    <div class="card-body" id="delete-event-card-body">
+                        <h5 class="card-title" id="delete-event-title">Are you sure you want to delete this event?</h5>
+                        <p class="card-text" id="delete-event-name"><strong>Event Name:</strong> {{ event.event_name }}</p>
+                        <p class="card-text" id="delete-event-description"><strong>Description:</strong> {{ event.event_description }}</p>
+                        <p class="card-text" id="delete-event-location"><strong>Location:</strong> {{ event.event_location }}</p>
+                        <p class="card-text" id="delete-event-date"><strong>Date:</strong> {{ event.event_date }}</p>
+                        <p class="card-text" id="delete-event-start-time"><strong>Start Time:</strong> {{ event.start_time }}</p>
+                        <p class="card-text" id="delete-event-end-time"><strong>End Time:</strong> {{ event.end_time }}</p>
+                        <form method="post" action="{% url 'delete-event' event.id %}" id="delete-event-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger" id="delete-event-btn">Delete</button>
+                            <a href="{% url 'event-list' %}" class="btn btn-secondary" id="cancel-delete-btn">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

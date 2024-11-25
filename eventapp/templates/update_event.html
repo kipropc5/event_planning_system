@@ -1,0 +1,74 @@
+{#{% extends 'master.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#    <div>#}
+{#    <h1 class="text-primary text-center">UPDATE EVENTS</h1>#}
+{#        <form action="/update-event/{{ event.event_id }}" class="event-form" method="post">#}
+{#            <p>{{ success }}</p>#}
+{#            {% csrf_token %}#}
+{#            <input value="{{ event.name }}" required class="form-control" placeholder="Update event name" name="e-name" type="text"><br>#}
+{#            <input value="{{ event.description }}" required class="form-control" placeholder="Update event name" name="e-description" type="text"><br>#}
+{#            <input value="{{ event.start_time }}" required class="form-control" placeholder="Update event name" name="e-time" type="time"><br>#}
+{#            <input value="{{ event.end_time }}" required class="form-control" placeholder="Update event name" name="e-end" type="time"><br>#}
+{#            <input value="{{ event.organizer }}" required class="form-control" placeholder="Update event name" name="e-organizer" type="text"><br>#}
+{#            <input value="{{ event.location }}" required class="form-control" placeholder="Update event name" name="e-location" type="text"><br>#}
+{#            <input value="{{ event.date }}" required class="form-control" placeholder="Update event name" name="e-date" type="date"><br>#}
+{#            <input type="submit" class="btn btn-info" value="Update">#}
+{##}
+{#        </form>#}
+{#        <p>{{ event_name }}</p>#}
+{#        <p>{{ event_description }}</p>#}
+{#        <p>{{ event_start_time }}</p>#}
+{#        <p>{{ event_end_time }}</p>#}
+{#        <p>{{ event_organizer }}</p>#}
+{#        <p>{{ event_location }}</p>#}
+{#        <p>{{ event_date }}</p>#}
+{##}
+{#    </div>#}
+{#{% endblock %}#}
+
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container mt-5" id="update-event-container">
+        <h1 class="text-primary text-center mb-4" id="update-event-header">Update Event</h1>
+        <div class="row justify-content-center" id="update-event-row">
+            <div class="col-md-8" id="update-event-col">
+                <form method="post" action="{% url 'update-event' event.id %}" id="update-event-form">
+                    {% csrf_token %}
+                    <div class="form-group" id="form-group-event-name">
+                        <label for="event_name">Event Name</label>
+                        <input type="text" id="event_name" name="event_name" class="form-control" value="{{ event.event_name }}" required>
+                    </div>
+                    <div class="form-group" id="form-group-event-description">
+                        <label for="event_description">Event Description</label>
+                        <textarea id="event_description" name="event_description" class="form-control" rows="3" required>{{ event.event_description }}</textarea>
+                    </div>
+                    <div class="form-group" id="form-group-event-location">
+                        <label for="event_location">Event Location</label>
+                        <input type="text" id="event_location" name="event_location" class="form-control" value="{{ event.event_location }}" required>
+                    </div>
+                    <div class="form-group" id="form-group-start-time">
+                        <label for="start_time">Start Time</label>
+                        <input type="time" id="start_time" name="start_time" class="form-control" value="{{ event.start_time }}" required>
+                    </div>
+                    <div class="form-group" id="form-group-end-time">
+                        <label for="end_time">End Time</label>
+                        <input type="time" id="end_time" name="end_time" class="form-control" value="{{ event.end_time }}" required>
+                    </div>
+                    <div class="form-group" id="form-group-event-date">
+                        <label for="event_date">Event Date</label>
+                        <input type="date" id="event_date" name="event_date" class="form-control" value="{{ event.event_date }}" required>
+                    </div>
+                    <div class="form-group" id="form-group-event-organizer">
+                        <label for="event_organizer">Event Organizer</label>
+                        <input type="text" id="event_organizer" name="event_organizer" class="form-control" value="{{ event.event_organizer }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="update-event-btn">Update Event</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

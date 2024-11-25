@@ -1,0 +1,129 @@
+
+{#<!doctype html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    {% load static %}#}
+{#    {% load crispy_forms_tags %}#}
+{#    <link rel="stylesheet" href="{% static '/css/decorate.css' %}">#}
+{##}
+{#    <meta charset="UTF-8">#}
+{#    <meta name="viewport"#}
+{#          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">#}
+{#    <meta http-equiv="X-UA-Compatible" content="ie=edge">#}
+{#    <title>Events app</title>#}
+{#</head>#}
+{#<body>#}
+{#<section>#}
+{#    <nav class="navbar navbar-expand-md bg-info navbar-dark">#}
+{#        brand#}
+{#        <a href="{% url 'home-page' %}" class="navbar-brand">CALVO'S EVENTS</a>#}
+{#        <button class="navbar_toggler" type="button" data-toggle="collapse" data-target="collapsibleNavbar">#}
+{#            <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{#        navbar links#}
+{#        <div class="collapse navbar-collapse" id="collapsibleNavbar">#}
+{#            <ul class="navbar-nav">#}
+{#               <li class="nav-item">#}
+{#                    <a href="{% url 'home-page' %}" class="nav-link">Home</a>#}
+{#               </li>#}
+{#                {% if user.is_authenticated %}#}
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'my-events' %}" class="nav-link">Events</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'add-event-page' %}" class="nav-link">Add Events</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'participants-page' %}" class="nav-link">Attendants</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'add-participant-page' %}" class="nav-link">Add Attendants</a>#}
+{#                    </li>#}
+{#                {% else %}#}
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'user-registration' %}" class="nav-link">REGISTER</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a href="{% url 'user-login' %}" class="nav-link">Login</a>#}
+{#                    </li>#}
+{#                {% endif %}#}
+{##}
+{##}
+{##}
+{#            </ul>#}
+{#        </div>#}
+{#    </nav>#}
+{##}
+{#</section>#}
+{#<section>#}
+{#    {% for message in messages %}#}
+{#        <p class="text-success">{{ message }}</p>#}
+{#    {% endfor %}#}
+{#  {% block content %}#}
+{#  {% endblock %}#}
+{#</section>#}
+{##}
+{##}
+{#</body>#}
+{#</html>#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/decorate.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body id="main-body">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="main-navbar">
+        <a class="navbar-brand" href="{% url 'home-page' %}" id="navbar-brand">My Site</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" id="navbar-items">
+                <li class="nav-item" id="nav-home">
+                    <a class="nav-link" href="{% url 'home-page' %}">Home</a>
+                </li>
+                <li class="nav-item" id="nav-events">
+                    <a class="nav-link" href="{% url 'event-list' %}">Events</a>
+                </li>
+                <li class="nav-item" id="nav-participants">
+                    <a class="nav-link" href="{% url 'participant-list' %}">Participants</a>
+                </li>
+                <li class="nav-item" id="nav-add-participant">
+                    <a class="nav-link" href="{% url 'create-participant' %}">Add Participant</a>
+                </li>
+{#                {% if user.is_authenticated %}#}
+{#                <li class="nav-item" id="nav-logout">#}
+{#                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>#}
+{#                </li>#}
+{#                {% else %}#}
+{#                <li class="nav-item" id="nav-login">#}
+{#                    <a class="nav-link" href="{% url 'login' %}">Login</a>#}
+{#                </li>#}
+{#                {% endif %}#}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4" id="main-container">
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-4" id="main-footer">
+        <p>&copy; 2024 My Site. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

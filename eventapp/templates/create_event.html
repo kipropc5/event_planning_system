@@ -1,0 +1,72 @@
+{#{% extends 'master.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#    <div>#}
+{#      <h1 class="text-primary text-center">ADD EVENT</h1>#}
+{#        <form action="{% url 'add-event-page' %}" class="product-form" method="post" >#}
+{#            <p>{{ success }}</p>#}
+{#            {% csrf_token %}#}
+{#            <input required class="form-control" placeholder="Enter event name" name="e-name" type="text"><br>#}
+{#            <input required class="form-control" placeholder="Enter event description" name="e-description" type="text"><br>#}
+{#            <input required class="form-control" placeholder="Enter event start time" name="e-time" type="time"><br>#}
+{#            <input required class="form-control" placeholder="Enter event end time" name="e-end" type="time"><br>#}
+{#            <input required class="form-control" placeholder="Enter event organizer" name="e-organizer" type="text"><br>#}
+{#            <input required class="form-control" placeholder="Enter event location" name="e-location" type="text"><br>#}
+{#            <input required class="form-control" placeholder="Enter event date" name="e-date" type="date"><br>#}
+{#            <input type="submit" class="btn btn-info" value="Save">#}
+{##}
+{#        </form>#}
+{#        <p>{{ event_name }}</p>#}
+{#        <p>{{ event_description }}</p>#}
+{#        <p>{{ event_start_time }}</p>#}
+{#        <p>{{ event_end_time }}</p>#}
+{#        <p>{{ event_organizer }}</p>#}
+{#        <p>{{ event_location }}</p>#}
+{#        <p>{{ event_date }}</p>#}
+{#    </div>#}
+{#{% endblock %}#}
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5" id="add-event-container">
+        <h1 class="text-primary text-center mb-4" id="add-event-header">Add New Event</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form method="post" action="{% url 'create-event' %}" id="add-event-form">
+                    {% csrf_token %}
+                    <div class="form-group" id="form-group-event-name">
+                        <label for="event_name">Event Name</label>
+                        <input type="text" id="event_name" name="event_name" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-event-description">
+                        <label for="event_description">Event Description</label>
+                        <textarea id="event_description" name="event_description" class="form-control" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group" id="form-group-event-location">
+                        <label for="event_location">Event Location</label>
+                        <input type="text" id="event_location" name="event_location" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-start-time">
+                        <label for="start_time">Start Time</label>
+                        <input type="time" id="start_time" name="start_time" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-end-time">
+                        <label for="end_time">End Time</label>
+                        <input type="time" id="end_time" name="end_time" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-event-date">
+                        <label for="event_date">Event Date</label>
+                        <input type="date" id="event_date" name="event_date" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-event-organizer">
+                        <label for="event_organizer">Event Organizer</label>
+                        <input type="text" id="event_organizer" name="event_organizer" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="add-event-btn">Add Event</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

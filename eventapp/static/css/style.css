@@ -1,0 +1,424 @@
+/* style.css */
+/*participant list start*/
+/* style.css */
+#participant-list-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#participant-list-header {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#participant-list-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#participant-list-thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.participant-list-th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#participant-list-tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.participant-actions .update-participant-btn {
+    margin-right: 5px;
+}
+
+.update-participant-btn,
+.delete-participant-btn {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#no-participants {
+    margin-top: 20px;
+}
+
+/*end participants list*/
+/*index styling*/
+/* style.css */
+#homepage-jumbotron {
+    background-color: #007bff;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+#homepage-title {
+    font-size: 3rem;
+}
+
+#homepage-lead {
+    font-size: 1.25rem;
+}
+
+#homepage-hr {
+    border-top: 2px solid #ffffff;
+}
+
+#homepage-explore {
+    margin-top: 20px;
+}
+
+#view-events-btn {
+    margin-right: 10px;
+}
+
+#homepage-container {
+    margin-top: 30px;
+}
+
+#events-column, #participants-column {
+    padding: 20px;
+}
+
+#events-header, #participants-header {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+#events-description, #participants-description {
+    margin-bottom: 20px;
+}
+
+#create-event-btn, #create-participant-btn {
+    margin-top: 10px;
+}
+
+/*end of index styling*/
+/*event list*/
+/* style.css */
+#event-list-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#event-list-header {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#event-list-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#event-list-thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.event-list-th,
+.event-list-th:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#event-list-tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.event-actions .update-event-btn {
+    margin-right: 5px;
+}
+
+.update-event-btn,
+.delete-event-btn {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#no-events {
+    margin-top: 20px;
+}
+
+/*end of event list*/
+/*delete participant*/
+/* style.css */
+/* style.css */
+#delete-participant-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#delete-participant-header {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#delete-participant-card {
+    margin-top: 20px;
+}
+
+#delete-participant-card-body {
+    padding: 20px;
+}
+
+#delete-participant-title {
+    font-size: 1.5em;
+}
+
+#delete-participant-btn {
+    background-color: #dc3545;
+    border: none;
+}
+
+#delete-participant-btn:hover {
+    background-color: #c82333;
+}
+
+#cancel-delete-btn {
+    background-color: #6c757d;
+    border: none;
+    margin-left: 10px;
+}
+
+#cancel-delete-btn:hover {
+    background-color: #5a6268;
+}
+
+/*end of delete participant*/
+/*delete event*/
+/* style.css */
+#delete-event-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#delete-event-header {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#delete-event-card {
+    margin-top: 20px;
+}
+
+#delete-event-card-body {
+    padding: 20px;
+}
+
+#delete-event-title {
+    font-size: 1.5em;
+}
+
+#delete-event-btn {
+    background-color: #dc3545;
+    border: none;
+}
+
+#delete-event-btn:hover {
+    background-color: #c82333;
+}
+
+#cancel-delete-btn {
+    background-color: #6c757d;
+    border: none;
+    margin-left: 10px;
+}
+
+#cancel-delete-btn:hover {
+    background-color: #5a6268;
+}
+
+/*end of delete event*/
+
+/*create participant*/
+/* style.css */
+
+/* style.css */
+#create-participant-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#create-participant-header {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#form-group-name,
+#form-group-email,
+#form-group-event {
+    margin-bottom: 20px;
+}
+
+#submit-participant-btn {
+    background-color: #007bff;
+    border: none;
+}
+
+#submit-participant-btn:hover {
+    background-color: #0056b3;
+}
+
+select.form-control {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+select.form-control option {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*end create participant*/
+/*create event*/
+/* style.css */
+#add-event-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#add-event-header {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#form-group-event-name,
+#form-group-event-description,
+#form-group-event-location,
+#form-group-start-time,
+#form-group-end-time,
+#form-group-event-date,
+#form-group-event-organizer {
+    margin-bottom: 20px;
+}
+
+#add-event-btn {
+    background-color: #007bff;
+    border: none;
+}
+
+#add-event-btn:hover {
+    background-color: #0056b3;
+}
+/*end of create event*/
+/*update event*/
+/* style.css */
+#update-event-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#update-event-header {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#update-event-row {
+    justify-content: center;
+}
+
+#update-event-col {
+    padding: 0;
+}
+
+#update-event-form {
+    margin-top: 20px;
+}
+
+#form-group-event-name,
+#form-group-event-description,
+#form-group-event-location,
+#form-group-start-time,
+#form-group-end-time,
+#form-group-event-date,
+#form-group-event-organizer {
+    margin-bottom: 20px;
+}
+
+#update-event-btn {
+    background-color: #007bff;
+    border: none;
+}
+
+#update-event-btn:hover {
+    background-color: #0056b3;
+}
+/*end of update events*/
+/*update participant*/
+/* style.css */
+#update-participant-container {
+    margin-top: 50px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#update-participant-header {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#update-participant-row {
+    justify-content: center;
+}
+
+#update-participant-col {
+    padding: 0;
+}
+
+#update-participant-form {
+    margin-top: 20px;
+}
+
+#form-group-participant-name,
+#form-group-participant-email,
+#form-group-event-name {
+    margin-bottom: 20px;
+}
+
+#update-participant-btn {
+    background-color: #007bff;
+    border: none;
+}
+
+#update-participant-btn:hover {
+    background-color: #0056b3;
+}
+/*end of update participant*/

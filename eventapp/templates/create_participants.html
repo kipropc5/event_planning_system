@@ -1,0 +1,85 @@
+{#{% extends 'master.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#    <div>#}
+{#    <h1 class="text-primary text-center">ADD PARTICIPANTS</h1>#}
+{#        <form action="{% url 'add-participant-page' %}" class="participant-form" method="post">#}
+{#            {% csrf_token %}#}
+{#            <input required class="form-control" placeholder="Enter name" name="p-name" type="text"><br>#}
+{#            <input required class="form-control" placeholder="Enter email" name="p-email" type="email"><br>#}
+{#            <input required class="form-control" placeholder="Enter event name" name="e-name" type="text"><br>#}
+{#            <input class="btn btn-info" value="Save" type="submit">#}
+{#        </form>#}
+{#        <p>{{ participant_name }}</p>#}
+{#        <p>{{ participant_email }}</p>#}
+{#        <p>{{ participant_event_name }}</p>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+{#{% extends 'master.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#    <div class="container">#}
+{#        <h1 class="text-primary text-center my-4">Add New Participant</h1>#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-md-6">#}
+{#                <form method="post" action="{% url 'create-participant' %}">#}
+{#                    {% csrf_token %}#}
+{#                    <div class="form-group">#}
+{#                        <label for="participant_name">Name</label>#}
+{#                        <input type="text" id="participant_name" name="participant_name" class="form-control" required>#}
+{#                    </div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="participant_email">Email</label>#}
+{#                        <input type="email" id="participant_email" name="participant_email" class="form-control" required>#}
+{#                    </div>#}
+{#                    <div class="form-group">#}
+{#                        <label for="event_name">Event</label>#}
+{#                        <select id="event_name" name="event_name" class="form-control" required>#}
+{#                            {% for event in events %}#}
+{#                                <option value="{{ event.id }}">{{ event.event_name }}</option>#}
+{#                            {% endfor %}#}
+{#                        </select>#}
+{#                    </div>#}
+{#                    <button type="submit" class="btn btn-primary btn-block">Add Participant</button>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div class="container my-5" id="create-participant-container">
+        <h1 class="text-primary text-center mb-4" id="create-participant-header">Add New Participant</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="post" action="{% url 'create-participant' %}" id="create-participant-form">
+                    {% csrf_token %}
+                    <div class="form-group" id="form-group-name">
+                        <label for="participant_name">Name</label>
+                        <input type="text" id="participant_name" name="participant_name" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-email">
+                        <label for="participant_email">Email</label>
+                        <input type="email" id="participant_email" name="participant_email" class="form-control" required>
+                    </div>
+                    <div class="form-group" id="form-group-event">
+                        <label for="event_name">Event</label>
+                        <select id="event_name" name="event_name" class="form-control" required>
+                            {% for event in events %}
+                                <option value="{{ event.id }}" title="{{ event.event_name }}">{{ event.event_name }}</option>
+                            {%empty%}
+                                <option value="" disabled>No events available
+                            {% endfor %}
+                        </select>
+                        <p>Events count: {{ events|length }}</p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-participant-btn">Add Participant</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

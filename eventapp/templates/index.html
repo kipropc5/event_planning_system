@@ -1,0 +1,36 @@
+{#{% extends 'master.html' %}#}
+{#{% load static %}#}
+{#{% block content %}#}
+{#    <div class="page_design">#}
+{#    <h1>Welcome To My Events Planner page</h1>#}
+{##}
+{#    </div>#}
+{#{% endblock %}#}
+
+   {% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <div class="jumbotron text-center" id="homepage-jumbotron">
+        <h1 class="display-4" id="homepage-title">Welcome to My Site</h1>
+        <p class="lead" id="homepage-lead">Your one-stop solution for managing events and participants.</p>
+        <hr class="my-4" id="homepage-hr">
+        <p id="homepage-explore">Explore our features below to get started.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'event-list' %}" role="button" id="view-events-btn">View Events</a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'participant-list' %}" role="button" id="view-participants-btn">View Participants</a>
+    </div>
+    <div class="container" id="homepage-container">
+        <div class="row" id="homepage-row">
+            <div class="col-md-6" id="events-column">
+                <h2 id="events-header">Events</h2>
+                <p id="events-description">Manage your events with ease. Create, update, and delete events, and keep track of all the important details.</p>
+                <a class="btn btn-info" href="{% url 'create-event' %}" id="create-event-btn">Create New Event</a>
+            </div>
+            <div class="col-md-6" id="participants-column">
+                <h2 id="participants-header">Participants</h2>
+                <p id="participants-description">Keep track of all your participants. Add new participants, update their information, and remove them if needed.</p>
+                <a class="btn btn-info" href="{% url 'create-participant' %}" id="create-participant-btn">Add New Participant</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,113 @@
+/*!* style.css *!*/
+/*body {*/
+/*    font-family: 'Arial', sans-serif;*/
+/*    background-color: #f8f9fa;*/
+/*}*/
+
+/*.text-center {*/
+/*    text-align: center;*/
+/*}*/
+
+/*.text-primary {*/
+/*    color: #007bff;*/
+/*}*/
+
+/*.participants-form {*/
+/*    margin: 20px auto;*/
+/*    max-width: 600px;*/
+/*    padding: 20px;*/
+/*    background-color: #ffffff;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*.form-control {*/
+/*    width: 100%;*/
+/*    margin-bottom: 15px;*/
+/*    padding: 10px;*/
+/*    font-size: 16px;*/
+/*    border: 1px solid #ced4da;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.form-control:focus {*/
+/*    border-color: #007bff;*/
+/*    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);*/
+/*    outline: none;*/
+/*}*/
+
+/*.btn-info {*/
+/*    background-color: #17a2b8;*/
+/*    border: none;*/
+/*    padding: 10px 20px;*/
+/*    font-size: 16px;*/
+/*    color: #ffffff;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.btn-info:hover {*/
+/*    background-color: #138496;*/
+/*}*/
+
+/*p {*/
+/*    font-size: 16px;*/
+/*    color: #343a40;*/
+/*}*/
+/* style.css */
+/*master styling*/
+/* style.css */
+#main-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+#main-navbar {
+    background-color: #343a40; /* Dark background for navbar */
+}
+
+#navbar-brand {
+    font-weight: bold;
+}
+
+#navbar-items .nav-item .nav-link {
+    color: #ffffff !important;
+    margin-right: 15px;
+}
+
+#navbar-items .nav-item .nav-link:hover {
+    background-color: #495057;
+    border-radius: 5px;
+}
+
+#navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#main-container {
+    margin-top: 80px;
+    max-width: 1200px;
+}
+
+#main-footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/*end main*/
